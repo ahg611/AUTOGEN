@@ -105,11 +105,6 @@ def chat_ui(step_key):
 def main_page():
     """Main page content."""
     st.title('노코드 머신러닝 모델링 툴 Dr.AUTOGEN 1.0')
-    st.write("""
-    AI를 만드는 AI Autogen이 자동으로 데이터 예측 모델을 만들고 그 과정을 함께 합니다.
-    \n모델 방향성에는 모델링의 목적 및 맥락을 적어주세요. 예측에 사용할 변수(X 변수)와 예측해볼 변수(Y)를 미리 설정해 주시면 도움이 됩니다.
-    \n예: 내가 업로드한 파일의 1, 2번째 열을 제외한 나머지 열들을 통해서 1, 2번째 열을 예측해줘
-    """)
 
     # Add OpenAI API key input
     openai_api_key = st.text_input("OpenAI API Key", type="password")
@@ -117,6 +112,13 @@ def main_page():
         st.session_state.openai_api_key = openai_api_key
         openai.api_key = openai_api_key
         st.success("API Key Set Successfully")
+    st.write("""
+    AI를 만드는 AI Autogen이 자동으로 데이터 예측 모델을 만들고 그 과정을 함께 합니다.
+    \n모델 방향성에는 모델링의 목적 및 맥락을 적어주세요. 예측에 사용할 변수(X 변수)와 예측해볼 변수(Y)를 미리 설정해 주시면 도움이 됩니다.
+    \n예: 내가 업로드한 파일의 X 변수들을 이용해서 Y 변수를 예측해줘
+    """)
+
+
 
     st.markdown("---")
     st.markdown("### 모델에서 사용할 데이터 파일을 업로드해주세요")
