@@ -23,7 +23,7 @@ import time
 import io
 
 # Set OpenAI API key
-openai.api_key = 'sk-proj-ctzGSwImDYUJyHelKc2NT3BlbkFJ6hJVo9agvD6iJhrgjsYT'
+openai.api_key = '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'
 
 def initialize_session_state():
     """Initialize session state variables."""
