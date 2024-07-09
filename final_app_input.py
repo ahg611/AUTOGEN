@@ -305,7 +305,7 @@ def detail_modeling_page(sub_selected):
                         results = []
                         for scale_type, scaled_df in [('MinMax Scaled', st.session_state.min_max_scaled), ('Standard Scaled', st.session_state.standard_scaled)]:
                             X = scaled_df.drop(columns=['LAB_612_HN_DIST_NIR_EP'])
-                            y = scaled_df['LAB_612_HN_DIST_NIR_EP']
+                            y = scaled_df['EndPoint']
                             for model_name, model in models.items():
                                 grid_search = GridSearchCV(model, param_grid[model_name], cv=5, scoring='neg_mean_squared_error')
                                 grid_search.fit(X, y)
